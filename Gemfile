@@ -5,6 +5,7 @@ gem 'pg'
 gem 'haml'
 gem 'sass'
 gem 'twitter-bootstrap-rails'
+gem 'devise'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
