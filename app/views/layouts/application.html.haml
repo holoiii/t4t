@@ -8,6 +8,14 @@
     = csrf_meta_tags
 
   %body
+    - if current_user
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            = link_to "TweetForTweet", "#", :class => "brand"
+            %ul.nav.pull-right
+              %li= link_to "Sign out", logout_path, :method => :delete
+
     .container
       - flash.each do |name, msg|
         .row
