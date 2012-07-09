@@ -14,3 +14,14 @@
     %h1
       Credits
     = @user.credits
+
+.row
+  .span5
+    = link_to "tweet me", "https://twitter.com/intent/tweet?text=doesthiswork"
+
+- content_for(:js_footer) do
+  :javascript
+    twttr.events.bind('tweet', function(event) {
+      console.log(event);
+      console.log(event.data);
+    });
