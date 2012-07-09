@@ -10,6 +10,7 @@
     %h1= "Hello, #{current_user.auth_info["info"]["name"]}"
 .row
   .span6
+    %h2 Your tweets
     %table.table.table-striped
       %thead
         %tr
@@ -24,6 +25,7 @@
             %td= tweet.tweet_text
 
   .span6
+    %h2 Other tweets
     %table.table.table-striped
       %thead
         %tr
