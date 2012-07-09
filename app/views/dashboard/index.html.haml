@@ -1,14 +1,20 @@
 .row
   .span6
-    %h1
-      Our Tweets
-    - @our_tweets.each do |tweet|
-      = tweet
+    %h1 Our Tweets
+    %ul
+      - @our_tweets.each do |tweet|
+        %li
+          %h3= tweet.tweet_id
+          %p= tweet.tweet_text
   .span6
     %h1
       Other Tweets
-    - @other_tweets.each do |tweet|
-      = tweet
+    %ul
+      - @other_tweets.each do |tweet|
+        %li
+          %h3= tweet.tweet_id
+          %p= tweet.tweet_text
+          = link_to "Retweet", retweet_path(tweet_id: tweet.tweet_id)
 .row
   .span12
     %h1
@@ -17,11 +23,6 @@
 
 .row
   .span5
-    = link_to "tweet me", "https://twitter.com/intent/tweet?text=doesthiswork"
-
-- content_for(:js_footer) do
-  :javascript
-    twttr.events.bind('tweet', function(event) {
-      console.log(event);
-      console.log(event.data);
-    });
+    = form_tag update_status_path do
+      = text_field_tag :message
+      = submit_tag

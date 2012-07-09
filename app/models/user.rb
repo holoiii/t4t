@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :remember_me, :provider, :uid
 
-  has_many :twitter_jobs
+  has_many :twitter_jobs, :dependent => :destroy
 
   serialize :auth_info
 end
