@@ -8,4 +8,10 @@
 
   %body
     .container
+      - flash.each do |name, msg|
+        .row
+          .span4
+            = content_tag :div, :class => "alert flash_#{name}" do
+              = link_to "×", "#", :data => {dismiss: "alert"}, :class => "close"
+              = msg
       = yield

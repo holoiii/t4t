@@ -6,6 +6,8 @@ gem 'haml'
 gem 'sass'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'omniauth-twitter'
+gem 'awesome_print'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
