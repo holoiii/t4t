@@ -9,6 +9,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'awesome_print'
 gem 'twitter'
+gem 'font-awesome-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'

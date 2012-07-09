@@ -1,5 +1,10 @@
 Tweetfortweet::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
+  devise_scope :user do
+    delete "/logout" => "devise/sessions#destroy"
+  end
+
   root :to => 'home#index'
   match 'dashboard' => 'dashboard#index'
   match 'update_status' => 'twitter_api#update_status'

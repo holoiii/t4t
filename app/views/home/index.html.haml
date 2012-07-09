@@ -1,7 +1,11 @@
 .row
   .span12
-    %h1
-      Tweet for Tweet
-    %p
-      Automated Twitter retweet exchange
-      = link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+    .hero-unit
+      %h1
+        Tweet for Tweet
+      %p
+        Automated Twitter Retweet Exchange
+      %p
+        = link_to user_omniauth_authorize_path(:twitter), :class => "btn btn-primary btn-large" do
+          %i.icon-twitter-sign
+          Sign in with Twitter

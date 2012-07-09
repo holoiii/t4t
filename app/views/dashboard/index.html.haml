@@ -1,3 +1,11 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .brand
+        = link_to "TweetForTweet", "#"
+      %ul.nav.pull-right
+        %li= link_to "Sign out", logout_path, :method => :delete
+
 .row
   .span6
     %h1 Our Tweets
