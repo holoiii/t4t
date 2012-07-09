@@ -5,24 +5,40 @@
         = link_to "TweetForTweet", "#"
       %ul.nav.pull-right
         %li= link_to "Sign out", logout_path, :method => :delete
-
+.row
+  .span5
+    %h1= "Hello, #{current_user.auth_info["info"]["name"]}"
 .row
   .span6
-    %h1 Our Tweets
-    %ul
-      - @our_tweets.each do |tweet|
-        %li
-          %h3= tweet.tweet_id
-          %p= tweet.tweet_text
+    %table.table.table-striped
+      %thead
+        %tr
+          %th
+            Tweet ID
+          %th
+            Tweet Text
+      %tbody
+        - @our_tweets.each do |tweet|
+          %tr
+            %td= tweet.tweet_id
+            %td= tweet.tweet_text
+
   .span6
-    %h1
-      Other Tweets
-    %ul
-      - @other_tweets.each do |tweet|
-        %li
-          %h3= tweet.tweet_id
-          %p= tweet.tweet_text
-          = link_to "Retweet", retweet_path(tweet_id: tweet.tweet_id)
+    %table.table.table-striped
+      %thead
+        %tr
+          %th
+            Tweet ID
+          %th
+            Tweet Text
+      %tbody
+        - @other_tweets.each do |tweet|
+          %tr
+            %td= tweet.tweet_id
+            %td
+              = tweet.tweet_text
+              .pull-right
+                = link_to "Retweet", retweet_path(tweet_id: tweet.tweet_id)
 .row
   .span12
     %h1
