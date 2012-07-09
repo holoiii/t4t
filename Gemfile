@@ -8,6 +8,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'awesome_print'
+gem 'twitter'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
