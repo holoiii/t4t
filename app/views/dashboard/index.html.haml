@@ -8,6 +8,7 @@
 .row
   .span5
     %h1= "Hello, #{current_user.auth_info["info"]["name"]}"
+    %h2= "Your credits: #{current_user.credits}"
 .row
   .span6
     %h2 Your tweets
@@ -41,12 +42,6 @@
               = tweet.tweet_text
               .pull-right
                 = link_to "Retweet", retweet_path(tweet_id: tweet.tweet_id)
-.row
-  .span12
-    %h1
-      Credits
-    = @user.credits
-
 .row
   .span5
     = form_tag update_status_path do
