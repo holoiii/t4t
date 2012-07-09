@@ -12,6 +12,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:success] = "Successfully signed up!"
     end
     sign_in @user
-    redirect_to root_url
+    redirect_to dashboard_url
   end
 end

@@ -2,10 +2,15 @@
   .span6
     %h1
       Our Tweets
+    - @our_tweets.each do |tweet|
+      = tweet
   .span6
     %h1
       Other Tweets
+    - @other_tweets.each do |tweet|
+      = tweet
 .row
   .span12
     %h1
       Credits
+    = @user.credits
